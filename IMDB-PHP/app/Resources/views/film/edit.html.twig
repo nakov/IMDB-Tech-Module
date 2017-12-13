@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <h1>Edit Film</h1>
+    <section>
+        <form method="POST">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" value="{{ film.name }}" name="film[name]" />
+                <label for="genre">Genre</label>
+                <input type="text" id="genre" value="{{ film.genre }}" name="film[genre]" />
+                <label for="director">Director</label>
+                <input type="text" id="director" value="{{ film.director }}" name="film[director]" />
+                <label for="year">Year</label>
+                <input type="text" id="year" value="{{ film.year }}" name="film[year]" />
+
+                {{ form_row(form._token) }}
+
+                <button type="submit" class="accept">Edit</button>
+                <button type="button" onclick="location.href='/'" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,21 @@
+<h1>Create Film</h1>
+<section>
+    <form action="/create" , method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{name}}">
+
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" value="{{genre}}">
+
+            <label for="director">Director</label>
+            <input type="text" id="director" name="director"  value="{{director}}">
+
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" value="{{year}}">
+
+            <button type="submit" class="accept">Create</button>
+            <button type="button" class="cancel" onclick="location.href='/'">Cancel</button>
+        </div>
+    </form>
+</section>

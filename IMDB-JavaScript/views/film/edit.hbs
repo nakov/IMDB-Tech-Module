@@ -1,0 +1,17 @@
+<h1>Edit Film</h1>
+<section>
+    <form action="/edit/{{id}}" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" value="{{name}}" name="name" />
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" value="{{genre}}" name="genre" />
+            <label for="director">Director</label>
+            <input type="text" id="director" value="{{director}}" name="director" />
+            <label for="year">Year</label>
+            <input type="text" id="year" value="{{year}}" name="year" />
+            <button type="submit" class="accept">Edit</button>
+            <button type="button" class="cancel" onclick="location.href='/'">Cancel</button>
+        </div>
+    </form>
+</section>

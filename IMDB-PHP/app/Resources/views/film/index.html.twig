@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+<h1>All Films</h1>
+
+<div>
+    <button class="add-new" onclick="location.href='/create'">Create New Film</button>
+</div>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Director</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+            {% for film in films %}
+            <tr>
+                <td>{{ film.name }}</td>
+                <td>{{ film.genre }}</td>
+                <td>{{ film.director }}</td>
+                <td>{{ film.year }}</td>
+                <td>
+                    <button onclick="location.href='/edit/{{ film.id }}'" class="edit">Edit</button>
+                    <button onclick="location.href='/delete/{{ film.id }}'" class="delete">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+{% endblock %}

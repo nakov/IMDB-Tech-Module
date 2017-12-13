@@ -1,0 +1,33 @@
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">-->
+
+<h1>All Films</h1>
+
+<div>
+    <button th:onclick="'location.href = \'' + @{/create} + '\''" class="add-new">Create New Film</button>
+</div>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Director</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+            <th:block th:each="film : ${films}">
+            <tr>
+                <td th:text="${film.name}"></td>
+                <td th:text="${film.genre}"></td>
+                <td th:text="${film.director}"></td>
+                <td th:text="${film.year}"></td>
+                <td>
+                    <button th:onclick="'location.href = \'' + @{/edit/{id}(id=${film.id})} + '\''" class="edit">Edit</button>
+                    <button th:onclick="'location.href = \'' + @{/delete/{id}(id=${film.id})} + '\''" class="delete">Delete</button>
+                </td>
+            </tr>
+            </th:block>
+        </table>
+    </div>
+</section>

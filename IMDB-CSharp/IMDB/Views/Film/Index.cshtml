@@ -1,0 +1,38 @@
+﻿@model List<IMDB.Models.Film>
+
+@{
+    ViewBag.Title = "All Films";
+}
+
+<h1>All Films</h1>
+
+<div>
+    <button onclick="location.href='/create';return false;" class="add-new">Create New Film</button>
+</div>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Director</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var film in Model)
+            {
+                <tr>
+                    <td>@film.Name</td>
+                    <td>@film.Genre</td>
+                    <td>@film.Director</td>
+                    <td>@film.Year</td>
+                    <td>
+                        <button onclick="location.href='/edit/@film.Id';return false;" class="edit">Edit</button>
+                        <button onclick="location.href='/delete/@film.Id';return false;" class="delete">Delete</button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+<h1>Edit Film</h1>
+<section>
+    <form method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" th:value="${film.name}" name="name" />
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" th:value="${film.genre}" name="genre" />
+            <label for="director">Director</label>
+            <input type="text" id="director" th:value="${film.director}" name="director" />
+            <label for="year">Year</label>
+            <input type="text" id="year" th:value="${film.year}" name="year" />
+            <button class="accept" type="submit">Edit</button>
+            <button type="button" th:onclick="'location.href = \'' + @{/} + '\''" class="cancel">Cancel</button>
+        </div>
+    </form>
+</section>

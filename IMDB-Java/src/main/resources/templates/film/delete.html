@@ -1,0 +1,17 @@
+<h1>Delete Film</h1>
+<section>
+    <form th:action="@{/delete/{id}(id=${film.id})}" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" th:value="${film.name}" disabled="disabled" />
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" th:value="${film.genre}" disabled="disabled" />
+            <label for="director">Director</label>
+            <input type="text" id="director" th:value="${film.director}" disabled="disabled" />
+            <label for="year">Year</label>
+            <input type="text" id="year" th:value="${film.year}" disabled="disabled" />
+            <button class="accept" type="submit">Delete</button>
+            <button type="button" th:onclick="'location.href = \'' + @{/} + '\''" class="cancel">Cancel</button>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,31 @@
+<h1>All Films</h1>
+
+<div>
+    <button class="add-new" onclick="location.href='/create'">Create New Film</button>
+</div>
+
+<section>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Genre</th>
+                <th>Director</th>
+                <th>Year</th>
+                <th>Actions</th>
+            </tr>
+            {{#each films}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.genre}}</td>
+                <td>{{this.director}}</td>
+                <td>{{this.year}}</td>
+                <td>
+                    <button class="edit" onclick="location.href='/edit/{{this.id}}'">Edit</button>
+                    <button class="delete" onclick="location.href='/delete/{{this.id}}'">Delete</button>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</section>

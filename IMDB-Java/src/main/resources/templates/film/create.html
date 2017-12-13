@@ -1,0 +1,20 @@
+<h1>Create Film</h1>
+<section>
+    <form th:action="@{/create}" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" th:value="${film.name}" />
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre"
+                   th:value="${film.genre}"/>
+            <label for="director">Director</label>
+            <input type="text" id="director" name="director"
+                   th:value="${film.director}"/>
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year"
+                   th:value="${film.year}"/>
+            <button class="accept" type="submit">Create</button>
+            <button type="button" th:onclick="'location.href = \'' + @{/} + '\''" class="cancel">Cancel</button>
+        </div>
+    </form>
+</section>

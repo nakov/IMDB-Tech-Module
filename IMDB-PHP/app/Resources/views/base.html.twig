@@ -1,0 +1,28 @@
+{#
+   This is the base template used as the application layout which contains the
+   common elements and decorates all the other templates.
+   See http://symfony.com/doc/current/book/templating.html#template-inheritance-and-layouts
+#}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}IMDB{% endblock %}</title>
+    {% block stylesheets %}
+        {#<link rel="stylesheet" href="{{ asset('css/reset-style.css') }}">;#}
+        {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">#}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+
+<body id="{% block body_id %}{% endblock %}">
+    {%  if errorMsg is defined %}
+        <div class="error">{{ errorMsg }}</div>
+    {% endif %}
+{% block body %}
+    {% block main %}{% endblock %}
+{% endblock %}
+</body>
+</html>

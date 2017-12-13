@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:include="fragments/head" th:with="pageTitle='IMDB'"></head>
+
+<body>
+
+<header th:if="${message}" th:text="${message}" />
+
+<main th:include="${view}"></main>
+
+</body>
+</html>
